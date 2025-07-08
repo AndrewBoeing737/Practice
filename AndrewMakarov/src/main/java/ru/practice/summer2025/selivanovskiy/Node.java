@@ -4,14 +4,44 @@ package ru.practice.summer2025.selivanovskiy;
 import java.util.List;
 
 public class Node {
+    int Id;
+    String name;
+    List<Node> Childrens;
 
+    public Node(String name) {
+        this.name = name;
+    }
+
+    public Node(int id) {
+        Id = id;
+    }
+
+    public Node(int id, String name, List<Node> childrens) {
+        Id = id;
+        this.name = name;
+        Childrens = childrens;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setChildrens(List<Node> childrens) {
+        Childrens = childrens;
+    }
+
+    public List<Node> getChildrens() {
+        return Childrens;
+    }
 
     public Node() {
 
     }
-    public Node(String name_) {
 
-    }
 
     public String getName() {
         return "";
