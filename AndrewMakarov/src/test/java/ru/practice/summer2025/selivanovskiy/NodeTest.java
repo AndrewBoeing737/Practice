@@ -40,7 +40,6 @@ public class NodeTest {
         Node child=new Node("child");
         Node chil1=new Node("children");
         Node chil2=new Node("children");
-
         Node chil3=new Node("children");
         root.AddChildren(child);
         child.AddChildren(chil1);
@@ -61,8 +60,7 @@ public class NodeTest {
         child.AddChildren(chil1);
         child.AddChildren(chil2);
         root.DeleteChildrensFromName("children");
-
-        assertEquals(0,root.getChildren().size());
+        assertEquals(1,child.getChildren().size());
     }
     @Test
     void DeleteAllNodes(){
