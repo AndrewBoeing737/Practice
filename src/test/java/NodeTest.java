@@ -150,5 +150,6 @@ public class NodeTest {
         Node children2=new Node("children2");
         children.addChild(children2);
         root.from_JSON_file("C:\\Users\\user\\Desktop\\index.json");
+
     }
 }
