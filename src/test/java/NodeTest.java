@@ -125,7 +125,30 @@ public class NodeTest {
         children.addChild(children2);
 
         StringBuilder sb = new StringBuilder();
-        root.to_HTML_file("C:\\Users\\user\\Desktop\\index.html");
+        root.to_HTML_file( "target\\index.html");
         System.out.println(sb.toString());
+
+    }
+    @Test
+    void _to_JSON_File(){
+        Node root = new Node("root");
+        Node children=new Node("children");
+        Node children1=new Node("children1");
+        root.AddChildren(children);
+        root.AddChildren(children1);
+        Node children2=new Node("children2");
+        children.addChild(children2);
+        root.to_JSON_file("C:\\Users\\user\\Desktop\\index.json");
+    }
+    @Test
+    void _from_JSON_File(){
+        Node root = new Node("root");
+        Node children=new Node("children");
+        Node children1=new Node("children1");
+        root.AddChildren(children);
+        root.AddChildren(children1);
+        Node children2=new Node("children2");
+        children.addChild(children2);
+        root.from_JSON_file("C:\\Users\\user\\Desktop\\index.json");
     }
 }

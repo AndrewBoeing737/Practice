@@ -1,8 +1,13 @@
 package org.example;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -168,4 +173,28 @@ public class Node {
             throw new RuntimeException(e);
         }
     }
+    public void to_JSON_file(String way)  {
+            try {
+                String myJson = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
+                FileWriter myWriter = new FileWriter(way);
+                myWriter.write(myJson);
+                myWriter.close();
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+    }
+    public Node from_JSON_file(String way)  {
+        try {
+            String myJson = new String(Files.readAllBytes(Paths.get(way)));
+            return  new ObjectMapper().readValue(myJson, Node.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
