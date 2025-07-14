@@ -100,7 +100,7 @@ public class NodeTest {
         root.Print_tree_Html(0);
     }
     @Test
-    void _HTML_to_String(){
+    void HTML_to_String(){
         Node root = new Node("root");
         Node children=new Node("children");
         Node children1=new Node("children1");
@@ -115,7 +115,7 @@ public class NodeTest {
         System.out.println(sb.toString());
     }
     @Test
-    void _HTML_to_File(){
+    void HTML_to_File(){
         Node root = new Node("root");
         Node children=new Node("children");
         Node children1=new Node("children1");
@@ -130,7 +130,7 @@ public class NodeTest {
 
     }
     @Test
-    void _to_JSON_File(){
+    void to_JSON_File(){
         Node root = new Node("root");
         Node children=new Node("children");
         Node children1=new Node("children1");
@@ -141,7 +141,7 @@ public class NodeTest {
         root.to_JSON_file("C:\\Users\\user\\Desktop\\index.json");
     }
     @Test
-    void _from_JSON_File(){
+    void from_JSON_File(){
         Node root = new Node("root");
         Node children=new Node("children");
         Node children1=new Node("children1");
